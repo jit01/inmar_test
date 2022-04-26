@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if operation %}
+    <h1>Thanks to adding {{operation}} records</h1>
+    <a href="/">Home</a>
+    <button type="button"><a href="/add">Add one more item</a></button>
+{% else %}
+<form method="post">
+    {{form}}
+    {% csrf_token %}
+    <button type="submit" > Add </button>
+    <button type="button"> <a href="/">Cancel</a></button>
+</form>
+{% endif %}
+</body>
+</html>

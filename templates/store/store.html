@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th class="label">SKU</th>
+            <th class="label">Location</th>
+            <th class="label">Department</th>
+            <th class="label">Category</th>
+            <th class="label">SubCategory</th>
+        </tr>
+    </thead>
+        {% if not data_id %}
+            {% for data in data %}
+                <tbody>
+                    <tr>
+                        <td class="value">{{ data.sku }}</td>
+                        <td class="value">{{ data.location }}</td>
+                        <td class="value">{{ data.department}}</td>
+                        <td class="value">{{ data.category }}</td>
+                        <td class="value">{{ data.subcategory }}</td>
+                    </tr>
+                </tbody>
+            {% endfor %}
+        {% else %}
+            <tbody>
+                    <tr>
+                        <td class="value">{{ data.sku }}</td>
+                        <td class="value">{{ data.location }}</td>
+                        <td class="value">{{ data.department}}</td>
+                        <td class="value">{{ data.category }}</td>
+                        <td class="value">{{ data.subcategory }}</td>
+                    </tr>
+                </tbody>
+        {% endif %}
+</table>
+{% if data_id %}
+    <button type="submit"><a href="{% url 'update' %}">Update Record</a></button>
+    <button type="submit"><a href="{% url 'delete' data.id %}">Delete Record</a></button>
+{% else %}
+    <form action="/add">
+        <button type="submit" class="grp-button grp-default a">Add Record</button>
+    </form>
+{% endif %}
+</body>
+</html>

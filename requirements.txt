@@ -1,0 +1,15 @@
+attrs==20.2.0
+Django==2.2
+djangorestframework==3.9.1
+djangorestframework-jsonapi==2.8.0
+importlib-metadata==2.0.0
+inflection==0.5.1
+jsonschema==3.2.0
+model-mommy==2.0.0
+pony==0.7.13
+pyrsistent==0.17.3
+pytz==2020.1
+six==1.15.0
+sqlparse==0.3.1
+store==2020.2.10
+zipp==3.3.1
